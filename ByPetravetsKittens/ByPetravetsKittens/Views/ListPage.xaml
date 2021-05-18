@@ -23,29 +23,17 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="170" />
+                                    <ColumnDefinition Width="160" />
                                 </Grid.ColumnDefinitions>
 
-                            <Frame BorderColor="{DynamicResource Key=BackgroundColor}" BackgroundColor="{AppThemeBinding Dark=Black, Light=White}" CornerRadius="10">
+                            <Frame BorderColor="#ff5226" BackgroundColor="{AppThemeBinding Dark=Black, Light=White}" Margin="10">
                                 <StackLayout HorizontalOptions="CenterAndExpand">
                                     <!-- <Image Source="{Binding AvatarUrl}" -->
                                     <!--        HeightRequest="90" -->
                                     <!--        WidthRequest="90" -->
                                     <!--        HorizontalOptions="CenterAndExpand"/> -->
-                                    <StackLayout HorizontalOptions="Center" Spacing="0">
+                                    <StackLayout HorizontalOptions="Center" Spacing="10">
                                         <Label Text="{Binding Nickname}"
-                                               Style="{DynamicResource LabelStyle}" 
-                                               LineBreakMode="TailTruncation"
-                                               HorizontalOptions="Center"/>
-                                        <Label Text="   "
-                                               Style="{DynamicResource LabelStyle}" 
-                                               LineBreakMode="TailTruncation"
-                                               HorizontalOptions="Center"/>
-                                        <Label Text="{Binding FavouriteServerAddress}"
-                                               Style="{DynamicResource LabelStyle}"                                         
-                                               LineBreakMode="TailTruncation"
-                                               HorizontalOptions="Center"/>
-                                        <Label Text="   "
                                                Style="{DynamicResource LabelStyle}" 
                                                LineBreakMode="TailTruncation"
                                                HorizontalOptions="Center"/>
@@ -53,16 +41,8 @@
                                                Style="{DynamicResource LabelStyle}"                                           
                                                LineBreakMode="TailTruncation"
                                                HorizontalOptions="Center"/>
-                                        <Label Text="   "
-                                               Style="{DynamicResource LabelStyle}" 
-                                               LineBreakMode="TailTruncation"
-                                               HorizontalOptions="Center"/>
                                         <Label Text="{Binding Age}"
                                                Style="{DynamicResource LabelStyle}"                                           
-                                               LineBreakMode="TailTruncation"
-                                               HorizontalOptions="Center"/>
-                                        <Label Text="   "
-                                               Style="{DynamicResource LabelStyle}" 
                                                LineBreakMode="TailTruncation"
                                                HorizontalOptions="Center"/>
                                         <Label Text="{Binding Country}"

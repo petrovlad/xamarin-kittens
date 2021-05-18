@@ -100,6 +100,11 @@ namespace ByPetravetsKittens.Views
             SetDisplayedImagesHeight();
         }
 
+        private async void HandleToggleLocationClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EditLocation(_user));
+        }
+
         private async void HandleToggleVideoClicked(object sender, EventArgs e)
         {
             if (!_isVideoSelected)

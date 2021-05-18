@@ -136,7 +136,7 @@
     <value>Родина</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Изменить</value>
+    <value>Редактировать</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Электронная почта</value>
@@ -151,7 +151,7 @@
     <value>Кличка</value>
   </data>
   <data name="NoAccount" xml:space="preserve">
-    <value>Ещё не рарегистрирован? Вперёд!</value>
+    <value>Перейти к регистрации</value>
   </data>
   <data name="Occupation" xml:space="preserve">
     <value>Котятки</value>

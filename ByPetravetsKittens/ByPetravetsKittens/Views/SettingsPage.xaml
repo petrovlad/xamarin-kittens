@@ -65,7 +65,7 @@
 
             <Label Text=" " Style="{DynamicResource LabelStyle}" />
             
-            <Button Text="{xct:Translate LogOut}" Style="{DynamicResource ButtonStyle}" BackgroundColor="Red"
+            <Button Text="{xct:Translate LogOut}" Style="{DynamicResource ButtonStyle}" BackgroundColor="#ebdf36"
                     TextColor="White" Clicked="HandleLogOutClicked" />
         </StackLayout>
     </ContentPage.Content>

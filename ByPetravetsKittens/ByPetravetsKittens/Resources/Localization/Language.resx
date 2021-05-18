@@ -145,7 +145,7 @@
     <value>Monicker</value>
   </data>
   <data name="NoAccount" xml:space="preserve">
-    <value>Didn't register yet? Let's go!</value>
+    <value>Goto register page</value>
   </data>
   <data name="Occupation" xml:space="preserve">
     <value>Kittens</value>

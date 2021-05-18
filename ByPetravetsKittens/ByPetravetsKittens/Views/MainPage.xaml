@@ -8,10 +8,10 @@
              xmlns:pages="clr-namespace:ByPetravetsKittens.Views;assembly=ByPetravetsKittens" 
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom" 
-             BarBackgroundColor="#4CAF50"
+             BarBackgroundColor="#ff5226"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
   <!--Pages can be added as references or inline-->
-    <pages:ListPage Title="{xct:Translate Players}" />
-    <pages:MapPage Title="{xct:Translate Map}" />
-    <pages:SettingsPage Title="{xct:Translate Settings}" />
+    <pages:ListPage Title="{xct:Translate Players}" IconImageSource="dashboard.png"/>
+    <pages:MapPage Title="{xct:Translate Map}"  IconImageSource="map.png"/>
+    <pages:SettingsPage Title="{xct:Translate Settings}" IconImageSource="settings.png" />
 </TabbedPage>

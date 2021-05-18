@@ -187,7 +187,7 @@ namespace ByPetravetsKittens.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Didn&apos;t register yet? Let&apos;s go!.
+        ///   Looks up a localized string similar to Goto register page.
         /// </summary>
         internal static string NoAccount {
             get {

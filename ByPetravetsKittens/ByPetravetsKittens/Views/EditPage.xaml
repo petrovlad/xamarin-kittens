@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="15">
-                <Label Text="The Book" Style="{DynamicResource LabelStyle}" />
+                <Label Text="The kitten" Style="{DynamicResource LabelStyle}" />
                 <!-- <Picker x:Name="Occupation" Style="{DynamicResource PickerStyle}" /> -->
                 <!-- <Picker x:Name="FavouriteMob" Style="{DynamicResource PickerStyle}" /> -->
 
@@ -22,7 +22,7 @@
 
                 <Entry x:Name="RealworldName" Style="{DynamicResource EntryStyle}" Placeholder="Genre" />
                 <Entry x:Name="Country" Style="{DynamicResource EntryStyle}" Placeholder="Country" />
-                <Entry x:Name="City" Style="{DynamicResource EntryStyle}" Placeholder="Description" />
+                <Entry x:Name="City" Style="{DynamicResource EntryStyle}" Placeholder="Tail length" />
                 <Entry x:Name="Age" Style="{DynamicResource EntryStyle}" Placeholder="Year" />
 
                 <Label Text="Location" Style="{DynamicResource LabelStyle}" />
@@ -30,11 +30,12 @@
                 <Entry x:Name="Longitude" Style="{DynamicResource EntryStyle}" Placeholder="Longitude" />
 
                 <Label Text="Media" Style="{DynamicResource LabelStyle}" />
+                <Button x:Name="Location" Text="Edit Location" Clicked="HandleToggleLocationClicked"
+                        BackgroundColor="#ebdf36"/>
                 <Button x:Name="Video" Text="AddVideo" Clicked="HandleToggleVideoClicked"
-                    Style="{DynamicResource ButtonStyle}" />
-
+                        BackgroundColor="#ebdf36"/>
                 <Button Text="Add image" Clicked="HandleAddImageClicked"
-                    Style="{DynamicResource ButtonStyle}" />
+                        BackgroundColor="#ebdf36"/>
 
               
                     <CollectionView x:Name="DisplayedImages" ItemsSource="{Binding Images}">

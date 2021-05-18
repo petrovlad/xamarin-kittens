@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="ByPetravetsKittens.Views.EditLocation"
+             BindingContext="{Binding Path=UsersViewModel, Source={StaticResource ViewModelLocator}}">
+    <ContentPage.Content>
+        <StackLayout>
+            <maps:Map x:Name="Map" MapClicked="Map_OnMapClicked">
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>53.89168</x:Double>
+                                    <x:Double>27.54893</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>11</x:Double>
+                            <x:Double>11</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+            </maps:Map>
+            <Button x:Name="btnSave" Text="Save" Clicked="HandleSaveLocationClicked"
+                    BackgroundColor="#ebdf36"/>
+            <!--<maps:Map ItemsSource="{Binding Users}">
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>53.89168</x:Double>
+                                    <x:Double>27.54893</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>11</x:Double>
+                            <x:Double>11</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+                <maps:Map.ItemTemplate >
+                    <DataTemplate>
+                        ~1~<maps:Pin Label="{Binding Nickname}" Position="{Binding Position}"
+                                  InfoWindowClicked="HandleMarkerClicked"/>@1@
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
+            </maps:Map>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

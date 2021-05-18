@@ -33,7 +33,7 @@
                 <Entry x:Name="Age" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate Age}" />
 
 
-                <Button Text="{xct:Translate SignUp}" Style="{DynamicResource ButtonStyle}" Clicked="HandleSignUpClick" BackgroundColor="#009688"/>
+                <Button Text="{xct:Translate SignUp}" Style="{DynamicResource ButtonStyle}" Clicked="HandleSignUpClick" BackgroundColor="#ebdf36"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
