@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ByPetravetsKittens.App"
+             xmlns:vm="clr-namespace:ByPetravetsKittens.ViewModels">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>        
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="ViewModelLocator" />
+            
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="BackgroundColor">Orange</Color>
+            <x:Int32 x:Key="FontSize">18</x:Int32>
+            <x:String x:Key="FontFamily">"Droid Sans"</x:String>
+            <x:String x:Key="Language">"en"</x:String>
+            <!--<Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>-->
+           
+            <Style TargetType="Label" x:Key="LabelStyle">
+                <Setter Property="FontSize" Value="{DynamicResource Key=FontSize}" />
+                <Setter Property="FontFamily" Value="{DynamicResource Key=FontFamily}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />                
+            </Style>
+
+            <Style TargetType="Entry" x:Key="EntryStyle">
+                <Setter Property="FontSize" Value="{DynamicResource Key=FontSize}" />
+                <Setter Property="FontFamily" Value="{DynamicResource Key=FontFamily}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="FontSize" Value="{DynamicResource Key=FontSize}" />
+                <Setter Property="FontFamily" Value="{DynamicResource Key=FontFamily}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+            </Style>
+
+            <Style TargetType="Picker" x:Key="PickerStyle">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+            </Style>
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

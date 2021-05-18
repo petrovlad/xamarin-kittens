@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+             x:Class="ByPetravetsKittens.Views.SettingsPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="{AppThemeBinding Dark=Black, Light=White}">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <!-- <StackLayout Orientation="Horizontal"> -->
+            <Label Text="{xct:Translate Language1}" Style="{DynamicResource LabelStyle}" />
+            <Picker x:Name="Language" Style="{DynamicResource PickerStyle}"
+                    SelectedIndexChanged="HandleLanguageChange"
+                    HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>English</x:String>
+                    <x:String>Русский</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text=" " Style="{DynamicResource LabelStyle}" />
+            <!-- </StackLayout> -->
+
+            <!-- <Label Text="{xct:Translate Color}" FontSize="{DynamicResource Key=FontSize}" -->
+            <!--        FontFamily="{DynamicResource Key=FontFamily}" Margin="0,0,0,20" -->
+            <!--        TextColor="{AppThemeBinding Dark=White, Light=Black}" /> -->
+
+            <!-- <StackLayout Orientation="Horizontal"> -->
+            <!--     <Label Text="{xct:Translate Font}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand" /> -->
+            <!--     <Picker x:Name="Fonts" Style="{DynamicResource PickerStyle}"  -->
+            <!--             SelectedIndexChanged="HandleFontChange" HorizontalOptions="FillAndExpand"> -->
+            <!--         <Picker.Items> -->
+            <!--             <x:String>Droid Sans</x:String> -->
+            <!--             <x:String>Helvetica Regular</x:String> -->
+            <!--             <x:String>Avenir Next</x:String> -->
+            <!--             <x:String>Noteworthy</x:String> -->
+            <!--         </Picker.Items> -->
+            <!--     </Picker> -->
+            <!-- </StackLayout> -->
+
+            <Label Text="{xct:Translate Size}" Style="{DynamicResource LabelStyle}" />
+
+            <!-- <StackLayout Orientation="Horizontal"> -->
+                <Slider x:Name="Size" Maximum="26" Minimum="14" Value="20" MinimumTrackColor="Gray"
+                        MaximumTrackColor="Gray"
+                        ThumbColor="{DynamicResource Key=Color}"
+                        Margin="0,0,0,30" HorizontalOptions="FillAndExpand" ValueChanged="HandleFontSizeChange" />
+                <!-- <Label Text="{Binding Source={x:Reference Name=Size}, Path=Value}" -->
+                <!--        Style="{DynamicResource LabelStyle}" /> -->
+                <Label Text=" " Style="{DynamicResource LabelStyle}" />
+            <!-- </StackLayout> -->
+
+            <!-- <colorpicker:ColorCircle x:Name="ColorPicker" -->
+            <!--                          Margin="10" -->
+            <!--                          HeightRequest="200" -->
+            <!--                          WidthRequest="200"  -->
+            <!--                          PropertyChanged="HandleColorChange"/> -->
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{xct:Translate DarkMode}" Style="{DynamicResource LabelStyle}"
+                       HorizontalOptions="StartAndExpand" />
+                <Switch x:Name="DarkModeSwitch" ThumbColor="{DynamicResource Key=Color}"
+                        Toggled="HandleDarkModeToggle" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+
+            <Label Text=" " Style="{DynamicResource LabelStyle}" />
+            
+            <Button Text="{xct:Translate LogOut}" Style="{DynamicResource ButtonStyle}" BackgroundColor="Red"
+                    TextColor="White" Clicked="HandleLogOutClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

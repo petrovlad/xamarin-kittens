@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ByPetravetsKittens.Views.ListPage"
+             BindingContext="{Binding Path=UsersViewModel, Source={StaticResource ViewModelLocator}}">
+    <ContentPage.Content>
+        <StackLayout Padding="20, 20, 20, 0">
+            <CollectionView ItemsSource="{Binding Users}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="0"
+                                     VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="HandleUserTapped" CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="170" />
+                                </Grid.ColumnDefinitions>
+
+                            <Frame BorderColor="{DynamicResource Key=BackgroundColor}" BackgroundColor="{AppThemeBinding Dark=Black, Light=White}" CornerRadius="10">
+                                <StackLayout HorizontalOptions="CenterAndExpand">
+                                    <!-- <Image Source="{Binding AvatarUrl}" -->
+                                    <!--        HeightRequest="90" -->
+                                    <!--        WidthRequest="90" -->
+                                    <!--        HorizontalOptions="CenterAndExpand"/> -->
+                                    <StackLayout HorizontalOptions="Center" Spacing="0">
+                                        <Label Text="{Binding Nickname}"
+                                               Style="{DynamicResource LabelStyle}" 
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="   "
+                                               Style="{DynamicResource LabelStyle}" 
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="{Binding FavouriteServerAddress}"
+                                               Style="{DynamicResource LabelStyle}"                                         
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="   "
+                                               Style="{DynamicResource LabelStyle}" 
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="{Binding RealworldName}"
+                                               Style="{DynamicResource LabelStyle}"                                           
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="   "
+                                               Style="{DynamicResource LabelStyle}" 
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="{Binding Age}"
+                                               Style="{DynamicResource LabelStyle}"                                           
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="   "
+                                               Style="{DynamicResource LabelStyle}" 
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                        <Label Text="{Binding Country}"
+                                               Style="{DynamicResource LabelStyle}"                                           
+                                               LineBreakMode="TailTruncation"
+                                               HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                            </Grid>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

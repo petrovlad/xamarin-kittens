@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ByPetravetsKittens.Views.DetailsPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Name="Details"
+             BackgroundColor="{AppThemeBinding Dark=Black, Light=White}">
+    <ContentPage.BindingContext>
+        <x:Reference Name="Details" />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{xct:Translate Edit}" Clicked="HandleEditClicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <!-- <Image x:Name="Avatar" HeightRequest="150" WidthRequest="150" /> -->
+                <Label x:Name="Nickname" Style="{DynamicResource LabelStyle}" FontSize="25" HorizontalOptions="Center"/>
+
+
+                <!-- <StackLayout Orientation="Horizontal"> -->
+                <!--     <Label Text="{xct:Translate Occupation}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/> -->
+                <!--     <Label x:Name="Occupation" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" /> -->
+                <!-- </StackLayout> -->
+
+                <!-- <StackLayout Orientation="Horizontal"> -->
+                <!--     <Label Text="{xct:Translate FavouriteMob}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/> -->
+                <!--     <Label x:Name="FavouriteMob" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" /> -->
+                <!-- </StackLayout> -->
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{xct:Translate ServerAddress}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="FavouriteServerAddress" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <!-- <StackLayout Orientation="Horizontal"> -->
+                <!--     <Label Text="{xct:Translate Edit}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/> -->
+                <!--     <Label x:Name="Privilege" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" /> -->
+                <!-- </StackLayout> -->
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{xct:Translate RealworldName}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="RealworldName" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{xct:Translate Country}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="Country" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{xct:Translate City}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="City" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{xct:Translate Age}" Style="{DynamicResource LabelStyle}" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="Age" Style="{DynamicResource LabelStyle}" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <CollectionView x:Name="ImagesPreview" ItemsSource="{Binding Images}" IsVisible="False" HeightRequest="60">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="4" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="HandleImageTapped"
+                                                          CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding .}" Aspect="AspectFill" Margin="0,0,0,10" HeightRequest="45"
+                                       WidthRequest="60" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <xct:MediaElement
+                    x:Name="Video"
+                    WidthRequest="420"
+                    HeightRequest="220"
+                    ShowsPlaybackControls="True"
+                    IsVisible="False"
+                    AutoPlay="False"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

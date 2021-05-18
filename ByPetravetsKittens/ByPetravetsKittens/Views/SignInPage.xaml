@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ByPetravetsKittens.Views.SignInPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Padding="15" VerticalOptions="Center">
+            <Label 
+                Text="{xct:Translate SignIn}" 
+                FontSize="35"
+                Style="{DynamicResource LableStyle}"
+                HorizontalOptions="Center" 
+            />
+
+            <Label Text="{xct:Translate Email}" Style="{DynamicResource LabelStyle}" />
+            <Entry x:Name="Email" Style="{DynamicResource EntryStyle}" />
+
+            <Label Text="{xct:Translate Password}" Style="{DynamicResource LabelStyle}" />
+            <Entry x:Name="Password" Style="{DynamicResource EntryStyle}" IsPassword="True"/>
+
+            <Button Text="{xct:Translate SignIn}" Style="{DynamicResource ButtonStyle}" Clicked="OnSignInClicked" BackgroundColor="#009688" />
+            <Label Text="{xct:Translate NoAccount}" Style="{DynamicResource LabelStyle}" HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignUpClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ByPetravetsKittens.Views.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{AppThemeBinding Dark=Black, Light=White}"
+             BarTextColor="{AppThemeBinding Dark=White, Light=Black}" 
+             xmlns:pages="clr-namespace:ByPetravetsKittens.Views;assembly=ByPetravetsKittens" 
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom" 
+             BarBackgroundColor="#4CAF50"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+  <!--Pages can be added as references or inline-->
+    <pages:ListPage Title="{xct:Translate Players}" />
+    <pages:MapPage Title="{xct:Translate Map}" />
+    <pages:SettingsPage Title="{xct:Translate Settings}" />
+</TabbedPage>

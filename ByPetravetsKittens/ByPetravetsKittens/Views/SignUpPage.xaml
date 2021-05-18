@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ByPetravetsKittens.Views.SignUpPage"
+             x:Name="SignUp"
+             Title="Sign up"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.BindingContext>
+        <x:Reference Name="SignUp" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <!-- <Image Source="{Binding AvatarUrl}" -->
+                <!--            HeightRequest="150" -->
+                <!--            WidthRequest="150"> -->
+                <!-- -->
+                <!-- </Image> -->
+
+                <Entry x:Name="Email" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate Email}" />
+                <Entry x:Name="Password" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate Password}" IsPassword="True" />
+
+                <Entry x:Name="Nickname" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate Nickname}" Completed="HandleNicknameChanged" />
+                <!-- <Picker x:Name="Occupation" Style="{DynamicResource PickerStyle}" /> -->
+                <!-- <Picker x:Name="FavouriteMob" Style="{DynamicResource PickerStyle}" /> -->
+
+                <Entry x:Name="FavouriteServerAddress" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate ServerAddress}" />
+                <!-- <Picker x:Name="Privilege" Style="{DynamicResource PickerStyle}" /> -->
+
+                <Entry x:Name="RealworldName" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate RealworldName}" />
+                <Entry x:Name="Country" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate Country}" />
+                <Entry x:Name="City" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate City}" />
+                <Entry x:Name="Age" Style="{DynamicResource EntryStyle}" Placeholder="{xct:Translate Age}" />
+
+
+                <Button Text="{xct:Translate SignUp}" Style="{DynamicResource ButtonStyle}" Clicked="HandleSignUpClick" BackgroundColor="#009688"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

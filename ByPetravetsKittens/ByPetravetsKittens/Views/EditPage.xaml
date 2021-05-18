@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ByPetravetsKittens.Views.EditPage"
+             x:Name="Edit"
+             BackgroundColor="{AppThemeBinding Dark=Black, Light=White}">
+    <ContentPage.BindingContext>
+        <x:Reference Name="Edit" />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="HandleSaveClicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Label Text="The Book" Style="{DynamicResource LabelStyle}" />
+                <!-- <Picker x:Name="Occupation" Style="{DynamicResource PickerStyle}" /> -->
+                <!-- <Picker x:Name="FavouriteMob" Style="{DynamicResource PickerStyle}" /> -->
+
+                <Entry x:Name="FavouriteServerAddress" Style="{DynamicResource EntryStyle}" Placeholder="Author" />
+                <!-- <Picker x:Name="Privilege" Style="{DynamicResource PickerStyle}" /> -->
+
+                <Entry x:Name="RealworldName" Style="{DynamicResource EntryStyle}" Placeholder="Genre" />
+                <Entry x:Name="Country" Style="{DynamicResource EntryStyle}" Placeholder="Country" />
+                <Entry x:Name="City" Style="{DynamicResource EntryStyle}" Placeholder="Description" />
+                <Entry x:Name="Age" Style="{DynamicResource EntryStyle}" Placeholder="Year" />
+
+                <Label Text="Location" Style="{DynamicResource LabelStyle}" />
+                <Entry x:Name="Latitude" Style="{DynamicResource EntryStyle}" Placeholder="Latitude" />
+                <Entry x:Name="Longitude" Style="{DynamicResource EntryStyle}" Placeholder="Longitude" />
+
+                <Label Text="Media" Style="{DynamicResource LabelStyle}" />
+                <Button x:Name="Video" Text="AddVideo" Clicked="HandleToggleVideoClicked"
+                    Style="{DynamicResource ButtonStyle}" />
+
+                <Button Text="Add image" Clicked="HandleAddImageClicked"
+                    Style="{DynamicResource ButtonStyle}" />
+
+              
+                    <CollectionView x:Name="DisplayedImages" ItemsSource="{Binding Images}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+
+                                <StackLayout Orientation="Horizontal" Margin="0,5,0,5">
+                                    <Image Source="{Binding .}" WidthRequest="65" HeightRequest="65"
+                                       Aspect="AspectFill" VerticalOptions="FillAndExpand"
+                                       HorizontalOptions="FillAndExpand" />
+                                    
+                                    <Button Text="Delete"
+                                        Command="{Binding Source={x:Reference Name=Edit}, Path=DeleteImageCommand}"
+                                        CommandParameter="{Binding .}" 
+                                        Style="{DynamicResource ButtonStyle}"
+                                        Margin="150,0,0,0"/>
+                                </StackLayout>
+
+                     
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+           
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
